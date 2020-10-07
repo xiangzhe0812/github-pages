@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React pre production
+          Learn React pre production....
         </a>
       </header>
     </div>
