@@ -25,10 +25,6 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - build-and-test:
-          filters:
-            branches:
-              ignore: gh-pages
       - deploy-gh-pages:
           filters:
             branches:
