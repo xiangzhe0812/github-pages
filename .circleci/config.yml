@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  node: circleci/node@3.0.0
 jobs:
   build-and-test:
     docker:
@@ -24,6 +26,6 @@ workflows:
       - deploy-gh-pages:
         filters:
           branches:
-            only: development
+            only: main
           requires:
             - build-and-test
