@@ -20,6 +20,12 @@ jobs:
       - image: circleci/node:erbium-browsers # v12
     steps:
       - run:
+          name: git 1
+          command: git config user.email "xiangzhe0812@gmail.com"
+      - run:
+          name: git 2
+          command: git config user.name "ci-build"
+      - run:
           name: Deploy to gh-pages branch
           command: NODE_DEBUG=gh-pages npx gh-pages --dotfiles --message "[skip ci] Deploy" -d dist/*
 workflows:
