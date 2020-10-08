@@ -40,5 +40,4 @@ workflows:
             - build
           filters:
             branches:
-              only: mai
-          
+              only: main
