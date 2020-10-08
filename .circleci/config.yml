@@ -19,7 +19,7 @@ jobs:
     machine:
       enabled: true
     steps:
-      - run: yarn deploy
+      - run: gh-pages -d build
 workflows:
   build-and-test:
     jobs:
