@@ -15,7 +15,7 @@ jobs:
           paths:
             - node_modules
       - run:
-         command: ｜
+         command: |
             git config --global user.email "xiangzhe0812@gmail.com"
             git config --global user.name "xiangzhe0812"
             yarn deploy
