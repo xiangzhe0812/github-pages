@@ -24,7 +24,7 @@ jobs:
           command: git config --global user.email "xiangzhe0812@gmail.com"
       - run:
           name: git 2
-          command: git config --global user.name "ci-build"
+          command: git config --global user.name "xiangzhe0812"
       - run:
           name: Deploy to gh-pages branch
           command: NODE_DEBUG=gh-pages npx gh-pages --dotfiles --message "[skip ci] Deploy" -d dist/*
