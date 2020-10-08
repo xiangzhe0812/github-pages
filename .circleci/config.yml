@@ -14,18 +14,24 @@ jobs:
           key: yarn-cache-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run: yarn lint
+      - run: yarn deploy
   deploy-gh-pages:
-    machine:
-      enabled: true
+    docker:
+      - image: circleci/node:erbium-browsers # v12
     steps:
-      - run: yarn run deploy
+      - run:
+          name: Deploy to gh-pages branch
+          command: NODE_DEBUG=gh-pages npx gh-pages --dotfiles --message "[skip ci] Deploy" -d dist/*
 workflows:
   build-and-test:
     jobs:
+      - build-and-test:
+          filters:
+            branches:
+              ignore: gh-pages
       - deploy-gh-pages:
-        filters:
-          branches:
-            only: main
-          requires:
-            - build-and-test
+          filters:
+            branches:
+              only: main
+            requires:
+              - build-and-test
